@@ -29,10 +29,11 @@ class Ball extends CircleComponent
   }
 
   @override
-  void onCollisionStart(
-      Set<Vector2> intersectionPoints, PositionComponent other) {
-    super.onCollisionStart(intersectionPoints, other);
+  void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
+    super.onCollision(intersectionPoints, other);
     // あたり判定によって動作を変更する
+
+    print("test");
 
     if (other is ScreenHitbox && x + dx + ballRadius / 2 < 0) {
       // 左端との衝突
